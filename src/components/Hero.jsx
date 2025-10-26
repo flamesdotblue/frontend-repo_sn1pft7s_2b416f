@@ -1,9 +1,18 @@
 import { motion } from 'framer-motion';
 import { Zap, Droplets, Sparkles } from 'lucide-react';
+import Spline from '@splinetool/react-spline';
 
 export default function Hero() {
   return (
-    <section className="relative min-h-[90vh] w-full overflow-hidden bg-[#030d05] text-white">
+    <section className="relative min-h-[95vh] w-full overflow-hidden bg-[#030d05] text-white">
+      {/* 3D interactive cover background */}
+      <div className="absolute inset-0">
+        <Spline
+          scene="https://prod.spline.design/MscgRj2doJR2RRa2/scene.splinecode"
+          style={{ width: '100%', height: '100%' }}
+        />
+      </div>
+
       {/* Animated neon gradient orbs */}
       <div className="pointer-events-none absolute inset-0">
         <motion.div
@@ -24,7 +33,8 @@ export default function Hero() {
         <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.06)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.06)_1px,transparent_1px)] bg-[size:40px_40px]" />
       </div>
 
-      <div className="relative mx-auto flex max-w-6xl flex-col items-center px-6 pt-28">
+      {/* Content */}
+      <div className="relative z-10 mx-auto flex max-w-6xl flex-col items-center px-6 pt-28">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -51,7 +61,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2, duration: 0.8 }}
-          className="mt-5 max-w-2xl text-center text-base leading-relaxed text-white/70 sm:text-lg"
+          className="mt-5 max-w-2xl text-center text-base leading-relaxed text-white/80 sm:text-lg"
         >
           Crafted for the daring. Charged with neon citrus. A handmade, futuristic prototype that roars with energy.
           Jo jeeta wahi sikandar.
